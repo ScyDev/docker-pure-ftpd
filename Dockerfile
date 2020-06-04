@@ -81,4 +81,4 @@ VOLUME ["/home/ftpusers", "/etc/pure-ftpd/passwd"]
 # startup
 CMD /run.sh -l puredb:/etc/pure-ftpd/pureftpd.pdb -E -j -R -P $PUBLICHOST
 
-EXPOSE 21 30000-30009
+# EXPOSE 21 30000-30009 # doesn't play well with docker-compose if port 21 is already exposed here, it won't get bound to the external IP
